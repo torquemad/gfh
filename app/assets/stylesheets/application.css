@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: tomato;
+}
+
+body {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background: url('http://placecage.com/g/1300/800');
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+nav ul {
+  background: grey;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 30px;
+}
+
+nav a {
+  font-size: 1.3em;
+  color: tomato;
+  text-decoration: none;
+}
+
+img {
+  max-height: 50%;
+  max-width: 50%;
+}

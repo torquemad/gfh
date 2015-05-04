@@ -1,0 +1,7 @@
+<h1>A SINGLE DISH</h1>
+
+<p>
+  <h2><%= @dish.title.upcase %></h2>
+  <img src="<%= @dish.photo_url %>" alt="what"> <br>
+  <%= @dish.tags.pluck(:name).join(", ") %>
+</p>

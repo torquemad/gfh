@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goodfoodhunting</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  
+    
+<nav>
+  <ul>
+    <li><%= link_to 'HOME', root_path %></li>
+    <li><%= link_to 'DISHES', dishes_all_path %></li>
+    <li><%= link_to 'TAGS', tags_all_path %></li>
+    <li><%= link_to 'USERS', users_all_path %></li>
+    
+    <% if !logged_in? %>
+      <li><%= link_to 'LOG IN', login_path %></li>
+    <% else %>
+      <li>
+        <%= form_tag("/logout", method: "delete") do%>
+          <%= submit_tag "logout" %>
+        <% end %>
+      </li>
+    <% end %>
+
+  </ul>
+</nav>
+<% if logged_in?%>
+  <%= "LOGGED IN as " + current_user.email %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

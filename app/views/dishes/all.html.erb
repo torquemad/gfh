@@ -1,0 +1,17 @@
+<h2>All Dishes</h2>
+
+<%= link_to 'new dish', new_dish_path %>
+
+<% @dishes.each do |dish| %>
+
+  <p>
+    <%= link_to dish.title, dish %> <br> 
+    <%= link_to 'edit', edit_dish_path(dish) %>
+
+    <%= form_for dish, method: :delete do |f| %>
+      <%= f.submit 'Delete' %>
+    <% end %>
+
+  </p>
+
+<% end %>
